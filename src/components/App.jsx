@@ -18,6 +18,10 @@ const App = () => {
   });
   const [filter, setFilter] = useState('');
 
+  useEffect(() => {
+    localStorage.setItem('contacts', JSON.stringify(contacts));
+  }, [contacts]);
+
   // Add new contact+checkContact in Phonebook
   const addContactWithForm = data => {
     const checkContact = contacts.some(
@@ -58,10 +62,6 @@ const App = () => {
   };
 
   const filteredContacts = getFilteredContacts();
-
-  useEffect(() => {
-    localStorage.setItem('contacts', JSON.stringify(contacts));
-  }, [contacts]);
 
   return (
     <div>
