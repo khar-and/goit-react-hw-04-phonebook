@@ -6,10 +6,6 @@ const ContactForm = ({ onSubmit }) => {
   const [name, setName] = useState('');
   const [number, setNumber] = useState('');
 
-  // Generate random ID
-  const nameIdInput = nanoid();
-  const numberIdInput = nanoid();
-
   const handleChangeInput = evt => {
     const { name, value } = evt.currentTarget;
 
@@ -34,7 +30,7 @@ const ContactForm = ({ onSubmit }) => {
 
   return (
     <Form onSubmit={handleSubmitForm}>
-      <Label htmlFor={nameIdInput}>
+      <Label>
         Name{' '}
         <Input
           type="text"
@@ -46,7 +42,7 @@ const ContactForm = ({ onSubmit }) => {
           onChange={handleChangeInput}
         />
       </Label>
-      <Label htmlFor={numberIdInput}>
+      <Label>
         Number{' '}
         <Input
           type="tel"
